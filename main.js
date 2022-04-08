@@ -26,6 +26,8 @@ server.use((req, res, next) => {
 
 // Use default router
 server.use('/api', router);
-server.listen(3000, () => {
+
+const POST = process.env.POST || 3000;
+server.listen(POST, () => {
   console.log('JSON Server is running');
 });
