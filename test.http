@@ -1,0 +1,28 @@
+@baseUrl = http://localhost:3000/api
+
+GET {{baseUrl}}/posts/3
+
+###
+# @name addNewCategory
+GET  {{baseUrl}}/posts
+
+###
+# @name addNewCategory
+POST {{baseUrl}}/posts
+Content-Type: application/json
+
+{
+    "title": "json",
+    "author": "typicode"
+}
+
+###
+# @name addNewCategory
+DELETE  {{baseUrl}}/posts/2
+Content-Type: application/json
+
+{
+    "title": "json",
+    "author": "typicode"
+}
+

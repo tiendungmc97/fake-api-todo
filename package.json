@@ -1,0 +1,24 @@
+{
+  "name": "fake-api",
+  "version": "1.0.0",
+  "description": "demo how to use json-server",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main.js",
+    "start": "npm run generate && node main.js",
+    "generate": "node generate.js"
+  },
+  "keywords": [
+    "json-server"
+  ],
+  "author": "TienDungmc97",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.1.2",
+    "nodemon": "^2.0.15"
+  }
+}
