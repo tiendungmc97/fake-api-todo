@@ -14,10 +14,14 @@ function randomString(length, chars) {
     return result.join('');
 }
 
+function randomInt(max){
+    return Math.floo(Math.random()*max)
+}
+
 const uppercase = (l = 8) => randomString(l, CHARSET.UPSERCASE);
 const alphabet = (l = 8) => randomString(l, CHARSET.ALPHABET);
 const number = (l = 8) => randomString(l, CHARSET.NUMBER);
 
 module.exports = {
-    uppercase, alphabet, number,
+    uppercase, alphabet, number, randomInt
 }

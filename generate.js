@@ -1,18 +1,18 @@
 const { number } = require('./helpers/random');
 const { faker } = require('@faker-js/faker');
 const fs = require('fs');
-const time = new Date();
+const { randomInt } = require('crypto');
 
 const users = [
   {
     id: '438010',
-    inforUserID: "823984",
+    inforUserID: '823984',
     username: 'admin',
     password: '123456',
   },
   {
     id: '438013',
-    inforUserID: "823985",
+    inforUserID: '823985',
     username: 'user',
     password: '123456',
   },
@@ -59,6 +59,22 @@ const inforUsers = [
 //   });
 //   return inforUsers;
 // };
+const status = ['new', 'deppeding', 'complete'];
+const randomTasks = (n) => {
+  if (n <= 0) return [];
+  const tasks = [];
+  Array.from(new Array(n)).forEach(() => {
+    const task = {
+      id: number(6),
+      name: faker.lorem.words(8),
+      status: status[randomInt(2)],
+      ctime: Date.now(),
+      mtime: Date.now(),
+    };
+    tasks.push(task);
+  });
+  return tasks;
+};
 
 const randomTodos = (users, n) => {
   if (n <= 0) return;
@@ -71,7 +87,7 @@ const randomTodos = (users, n) => {
         task: faker.lorem.words(),
         comment: faker.lorem.text(),
         timeTo: Date.now(),
-        timeFrom: Date.now()+3234234,
+        timeFrom: Date.now() + 3234234,
         ctime: Date.now(),
         mtime: Date.now(),
       };
@@ -87,12 +103,13 @@ const randomTodos = (users, n) => {
 
   // const inforUsers = randomInforUsers(3);
   const todos = randomTodos(users, 20);
-
+  const tasks = randomTasks(500);
   // prepare data
   const db = {
-    todos: todos,
-    users: users,
-    inforUsers: inforUsers,
+    todos,
+    users,
+    inforUsers,
+    tasks,
   };
 
   // write db object to db.json
