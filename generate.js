@@ -59,7 +59,7 @@ const inforUsers = [
 //   });
 //   return inforUsers;
 // };
-const status = ['new', 'deppeding', 'complete'];
+const status = ['new', 'depending', 'complete'];
 const randomTasks = (n) => {
   if (n <= 0) return [];
   const tasks = [];
