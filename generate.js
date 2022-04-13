@@ -103,7 +103,7 @@ const randomTodos = (users, n) => {
 
   // const inforUsers = randomInforUsers(3);
   const todos = randomTodos(users, 20);
-  const tasks = randomTasks(500);
+  const tasks = randomTasks(5);
   // prepare data
   const db = {
     todos,
