@@ -15,7 +15,7 @@ function randomString(length, chars) {
 }
 
 function randomInt(max){
-    return Math.floo(Math.random()*max)
+    return Math.floor(Math.random()*max)
 }
 
 const uppercase = (l = 8) => randomString(l, CHARSET.UPSERCASE);
@@ -23,5 +23,5 @@ const alphabet = (l = 8) => randomString(l, CHARSET.ALPHABET);
 const number = (l = 8) => randomString(l, CHARSET.NUMBER);
 
 module.exports = {
-    uppercase, alphabet, number, randomInt
+    uppercase, alphabet, number,randomInt
 }

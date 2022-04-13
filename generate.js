@@ -67,7 +67,7 @@ const randomTasks = (n) => {
     const task = {
       id: number(6),
       name: faker.lorem.words(8),
-      status: status[randomInt(2)],
+      status: status[randomInt(3)],
       ctime: Date.now(),
       mtime: Date.now(),
     };
